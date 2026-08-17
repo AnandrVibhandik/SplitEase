@@ -54,10 +54,11 @@ export const AuthProvider = ({ children }) => {
       return { success: false, error: message };
     }
   };
-
-  const register = async (name, email, password) => {
+const register = async (name, email, password) => {
     try {
-      const response = await axios.post('/api/auth/register', { name, email, password });
+      // HARDCODED FULL URL DIRECTLY IN THE REQUEST
+      const response = await axios.post('https://splitease-h5gj.onrender.com/api/auth/register', { name, email, password });
+      
       const { token, user } = response.data;
       localStorage.setItem('token', token);
       setToken(token);
