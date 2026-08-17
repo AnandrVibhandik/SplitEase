@@ -1,7 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-axios.defaults.baseURL = import.meta.env.VITE_API_URL;
+axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
 const AuthContext = createContext();
 
